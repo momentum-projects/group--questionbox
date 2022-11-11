@@ -1,8 +1,13 @@
 # Questionbox
 
+**IMPORTANT**: Please read this document closely. Many resources are linked within it. Before starting on your project, assemble a list of the tasks you think you need to do and discuss how you will tackle these together. The front-end will need to make some basic [wireframes](https://www.orbitmedia.com/blog/7-reasons-to-wireframe/#:~:text=for%20your%20website.-,Wireframes%20are%20simple%20black%20and%20white%20layouts%20that%20outline%20the,focusing%20on%20a%20site's%20structure).
+
+
+## Description & Overview
+
 This application is a question and answer platform, similar to Stack Overflow. It does _not_ have to be themed to code-related questions, though. Theming and design is up to you.
 
-You will likely not be able to do ALL of the listed requirements. That is OK. Decide what the core functionality is and what you can wait to implement once you have the basics done.
+You may not be able to do ALL of the listed requirements. That is OK. Decide what the core functionality is and what you can wait to implement once you have the basics done.
 
 ### Back-end: The API
 
@@ -25,19 +30,19 @@ You will need to make a list of your endpoints available to the front-end devs o
   - At minimum allow a search in the text of a question.
   - A more comprehensive search would allow searching both questions and answers.
 - Authenticated users can "star" or favorite questions or answers they like. They should also be able to un-star anything that they have starred.
-- Deploy to Heroku.
+- Deploy to Render.
 
 ### 🌶️ Spicy features
 
 - Add tags to questions and allow search by tags
 - Allow a user to upload a profile photo.
-  - for Heroku, you'll need to configure a storage backend like Amazon S3 in order to upload files.
+  - for deployment, you'll need to configure a storage backend like Amazon S3 in order to upload files.
 - Allow an unanswered question to be edited.
 - Allow the author of an answer to delete or edit an answer.
 
 ### Back-end development notes
 
-You should use [djoser](https://djoser.readthedocs.io/en/latest/) and [token-based authentication](https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication) to handle registration and login.
+You should use [djoser](https://djoser.readthedocs.io/en/latest/) and [token-based authentication](https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication) to handle registration and login. You will also likely want to [paginate your results](https://www.django-rest-framework.org/api-guide/pagination/#pagination).
 
 ### CORS
 
