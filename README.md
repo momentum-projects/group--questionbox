@@ -105,3 +105,7 @@ If you use Mockoon, you may want to be able to switch which server you use based
 You can [read more about approaches to building your front-end before the API is done in this dev.to article](https://dev.to/momentum/how-to-build-a-front-end-app-before-you-have-an-api-3ai3).
 
 You _can_ work with your backend dev(s) to get the back-end API running on your local machine, but you do not have to.
+
+### CORS Gotcha on the front end
+
+A gotcha for CORS on the front end is a missing trailing slash in your request URL. If CORS headers are set correctly on the backend but you are still getting a CORS error on the front end and it mentions a redirect, try adding a forward slash (`/`) to the end of the URL for the request that is failing.
