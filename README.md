@@ -39,6 +39,7 @@ You will need to make a list of your endpoints available to the front-end devs o
     - for deployment, you'll need to configure a storage backend like Amazon S3 in order to upload files.
 - Allow an unanswered question to be edited.
 - Allow the author of an answer to delete or edit an answer.
+- Allow users to upvote or downvote answers.
 
 ### Back-end development notes
 
@@ -52,14 +53,18 @@ CORS (Cross-Origin Resource Sharing) headers must be added to your responses for
 
 ## Front-End: The React application
 
-The front-end team will build a React application that will send AJAX requests to the QuestionBox API.
+The front-end team will build a React application that will send requests to the QuestionBox API.
 
-This application is a question and answer platform, similar to Stack Overflow in format, but you can theme it and design it however you like. This application should allow logged-in users to ask questions, give and receive answers, and mark an answer as accepted. Users that are not logged in should still be able to view questions and answers, but cannot ask questions, give answers, or mark answers as accepted.
+This application is a question and answer platform, similar to Stack Overflow in format, but you can theme it and design it however you like. This application should allow logged-in users to ask questions, give and receive answers, and mark an answer as accepted. 
+
+Users that are not logged in should still be able to view questions and answers, but cannot ask questions, give answers, or mark answers as accepted.
+
+Your application should be polished. It should gracefully handle loading, error, and empty (e.g., no results for a search) states. Forms should include validation. It must be deployed. 
 
 ### Minimum Requirements
 
 - Users can create an account (i.e., register).
-- Users can log in.
+- Users can log in and log out.
 - Unauthenticated users can see all questions.
 - Unauthenticated users can see the answers for a single question.
 - Authenticated users can ask (post) a question.
@@ -67,10 +72,12 @@ This application is a question and answer platform, similar to Stack Overflow in
     - A user can delete their own question.
 - Authenticated users can post an answer a question.
 - Authenticated users can mark an answer to their own question as "accepted". This should be indicated in the UI somehow.
-- Authenticated users have a profile page that lists all their own questions and answers.
-- Deployed to Netlify
+- Authenticated users have a profile page that lists all of their own questions and answers.
+- The application implements client-side routing.
+- The application is styled using a CSS library/framework.
+- The application is deployed to Netlify and runs in production without errors.
 
-#### Using React Router
+#### Routing
 
 Front-end routes are independent of back-end URLS. You can design the routes that make sense for your front-end application.
 
@@ -86,11 +93,12 @@ Most of these are dependent on whether the API supports these capabilities.
 
 - Authenticated users can "star" a question or answer they like.
 - Allow a user to "unstar" something they have previously starred.
-- Allow users to search the API using a search term.
+- Allow users to search questions using a search term.
     - If your API supports tags, allow search by tags.
-- The list of questions that comes back from the API may be paginated. If so, you should implement pagination in your application.
+- Add pagination to your lists of questions, so that you only show a certain number of questions at a time and users can page through them.
 - Allow questions to be edited if they have not been answered.
 - Allow users to show only the questions and/or answers they have starred.
+- Allow users to upvote/downvote answers.
 - Allow users to follow/unfollow each other.
 - Allow users to upload a profile photo.
 
